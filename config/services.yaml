@@ -1,0 +1,17 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  MaricTrading\Recaptcha\Form\Type\RecaptchaFormType:
+    tags: ["form.type"]
+    autowire: true
+
+  MaricTrading\Recaptcha\Service\RecaptchaService:
+    autowire: true
+    autoconfigure: true
+
+  marictrading.service.recaptcha:
+    alias: MaricTrading\Recaptcha\Service\RecaptchaService
+    public: true
