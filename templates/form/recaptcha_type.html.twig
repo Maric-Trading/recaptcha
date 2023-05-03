@@ -2,7 +2,6 @@
     {{ form_widget(form) }}
 {%- endblock -%}
 {%- block recaptcha_widget -%}
-    {{ form.parent.vars.id }}
     <script src="https://www.google.com/recaptcha/api.js?render={{ form.vars.recaptcha_site_key }}"></script>
     <script>
         function onClick(e) {
@@ -16,7 +15,7 @@
             });
         }
     </script>
-    <input type="text" name="{{ form.vars.full_name }}" id="{{ form.vars.id }}"/>
+    <input type="hidden" name="{{ form.vars.full_name }}" id="{{ form.vars.id }}"/>
     <button class="btn btn-primary"
             onclick="onClick(event)"
             type="submit"
